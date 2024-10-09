@@ -1,0 +1,33 @@
+from typing import List
+
+
+class Solution:
+    def give(self, nums: List[int]) -> int:
+        
+        """
+        
+        suppose 
+                            
+                                           curr   
+                                     a  b
+        
+        can have anything except drugs              
+        
+        max( curr + a, b )
+
+        """
+        
+        a = 1,000,000
+        b = 100,000
+        for curr in nums:
+            cache = max(curr + a, b)
+            a = b
+            b = cache
+
+        return b
+            
+
+
+
+
+
