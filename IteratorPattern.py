@@ -2,22 +2,28 @@ from abc import ABC, abstractmethod
 
 
 # iterator interface
-class Iterator(ABC):
+class Iterator(ABC):  def __init__(self, list):
+        self._list = list
+        self._index = 0
+        Pass
     @abstractmethod
-    def first(self):
-        pass
+    def first(self): self._index: 0
+        Pass
     @abstractmethod
-    def next(self):
-        pass
+    def next(self): self ._index += 1
+        Pass
     @abstractmethod
-    def has_next(self):
-        pass
+    def has_next(self):  return self._index < len(self._list)
+        Pass
     @abstractmethod
-    def current_item(self):
-        pass
+    def current_item(self): return self._list [self._index]
+        Pass
     @abstractmethod
-    def linear_traversal(self):
-        pass
+    def linear_traversal(self): self.first(source_code)
+        while self .has_next(my_list)
+           print(self.current_item)
+           self.next()
+       Pass
 
 
 # concrete iterator
@@ -33,8 +39,9 @@ class ConcreteIterator(Iterator):
         return self._collection[self._current_index]
     
     # checks if next exists
-    def has_next(self) -> bool:
+    def has_next(self) -> bool: true
         return self._current_index < len(self._collection)
+else: raise StopIteration
     
     # returns next
     def next(self):
